@@ -1,0 +1,17 @@
+<input
+  pInputText
+  type="text"
+  class="search-bar"
+  placeholder="Search products..."
+  [(ngModel)]="searchQuery"
+  (keyup.enter)="onSearch()"
+/>
+<button
+  pButton
+  type="button"
+  icon="pi pi-search"
+  class="search-btn"
+  (click)="onSearch()"
+></button>
+
+

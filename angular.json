@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "77298059-2928-421d-924e-2f7725f7f97b"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "632shop": {
+    "632ShopClient": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "632shop:build:production"
+              "buildTarget": "632ShopClient:build:production"
             },
             "development": {
-              "buildTarget": "632shop:build:development"
+              "buildTarget": "632ShopClient:build:development"
             }
           },
           "defaultConfiguration": "development"
