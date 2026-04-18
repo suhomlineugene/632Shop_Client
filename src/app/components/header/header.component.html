@@ -1,0 +1,47 @@
+<header class="header">
+  <!-- Header Section: Menu Icon, Logo, Search, Sign In, Cart -->
+  <div class="header-top">
+    <div class="left-section">
+      <button class="menu-btn" (click)="toggleMenu()">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+      <div class="logo-section">
+        <!--        <img [src]="logo_alt" alt="632 Shop Logo" class="logo"/>-->
+        <img src="logo_transp.png" alt="632 Shop Logo" class="logo"/>
+      </div>
+    </div>
+
+    <div class="center-section">
+      <div class="search-component">
+        <input
+          pInputText
+          type="text"
+          class="search-bar"
+          placeholder="Search products..."
+
+        />
+        <button
+          pButton
+          type="button"
+          class="search-btn"
+        >
+          <fa-icon [icon]="searchIcon"></fa-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="actions-section">
+      <button class="action-btn sign-in-btn">
+        <fa-icon [icon]="login"></fa-icon>
+        <span>Sign In</span>
+      </button>
+      <button class="action-btn cart-btn">
+        <fa-icon [icon]="cart"></fa-icon>
+        <span>Cart</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<app-menu [isOpen]="isMenuOpen" (close)="closeMenu()"></app-menu>
+
