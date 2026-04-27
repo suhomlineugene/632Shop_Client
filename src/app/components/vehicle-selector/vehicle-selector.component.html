@@ -1,0 +1,68 @@
+<div class="vehicle-selector">
+  <div class="selector-row">
+    <div class="selector-group">
+      <label for="year">Year</label>
+      <p-select
+        id="year"
+        [(ngModel)]="selectedYear"
+        [options]="years"
+        placeholder="Select Year"
+        [showClear]="true"
+        (onChange)="onYearChange()"
+        styleClass="w-full selector-dropdown"
+      ></p-select>
+    </div>
+
+    <div class="selector-group">
+      <label for="make">Make</label>
+      <p-select
+        id="make"
+        [(ngModel)]="selectedMake"
+        [options]="makes"
+        placeholder="Select Make"
+        [showClear]="true"
+        [disabled]="!selectedYear"
+        (onChange)="onMakeChange()"
+        styleClass="w-full selector-dropdown"
+      ></p-select>
+    </div>
+
+    <div class="selector-group">
+      <label for="model">Model</label>
+      <p-select
+        id="model"
+        [(ngModel)]="selectedModel"
+        [options]="models"
+        placeholder="Select Model"
+        [showClear]="true"
+        [disabled]="!selectedMake"
+        (onChange)="onModelChange()"
+        styleClass="w-full selector-dropdown"
+      ></p-select>
+    </div>
+
+    <div class="selector-group">
+      <label for="engine">Engine</label>
+      <p-select
+        id="engine"
+        [(ngModel)]="selectedEngine"
+        [options]="engines"
+        placeholder="Select Engine"
+        [showClear]="true"
+        [disabled]="!selectedModel"
+        styleClass="w-full selector-dropdown"
+      ></p-select>
+    </div>
+
+    <div class="selector-group button-group">
+      <p-button
+        [disabled]="isSearchDisabled()"
+        (click)="onSearch()"
+        class="search-icon-btn"
+      >
+        <fa-icon [icon]="searchIcon"></fa-icon>
+      </p-button>
+    </div>
+  </div>
+</div>
+
