@@ -1,0 +1,57 @@
+@import "../../../variables.scss";
+
+.category-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.menu-item {
+  display: flex;
+}
+
+.menu-link {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $electricity;
+    border-bottom-color: $electricity;
+  }
+
+  &.active {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+  }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+  .menu-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .category-menu {
+    display: none;
+  }
+}
+

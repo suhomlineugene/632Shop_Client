@@ -55,13 +55,14 @@
     </div>
 
     <div class="selector-group button-group">
-      <p-button
+      <button
+        class="apply-filter-btn"
         [disabled]="isSearchDisabled()"
         (click)="onSearch()"
-        class="search-icon-btn"
       >
-        <fa-icon [icon]="searchIcon"></fa-icon>
-      </p-button>
+        <fa-icon [icon]="carIcon"></fa-icon>
+        <span>Apply Filter</span>
+      </button>
     </div>
   </div>
 </div>

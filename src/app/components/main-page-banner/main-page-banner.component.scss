@@ -1,0 +1,113 @@
+@import "../../../variables.scss";
+
+.main-page-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 60px;
+  background: radial-gradient(120% 140% at 80% 20%, #1a1e26 0%, $black-steel 55%, #05060a 100%);
+  border: 1px solid $dark-grey-blue;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &__text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: #1fdf7c;
+    color: #06210f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 2.75rem;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  &__description {
+    margin: 0;
+    max-width: 460px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $salty;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  &__btn {
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &--primary {
+      background: $electricity;
+      color: $black-steel;
+    }
+
+    &--outline {
+      background: transparent;
+      color: #ffffff;
+      border-color: $dark-grey-blue;
+    }
+  }
+
+  &__image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__image-frame {
+    width: 648px;
+    height: 493px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: linear-gradient(160deg, #12151c 0%, #05070c 100%);
+    border: 1px solid $dark-grey-blue;
+    box-shadow: 0 0 60px rgba(173, 198, 255, 0.15);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      filter: drop-shadow(0 10px 30px rgba(173, 198, 255, 0.35));
+    }
+  }
+}
+

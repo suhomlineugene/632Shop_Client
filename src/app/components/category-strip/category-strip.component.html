@@ -1,0 +1,27 @@
+<section class="category-strip">
+  <div class="category-strip__header">
+    <div class="category-strip__heading">
+      <h2 class="category-strip__title">Shop by Category</h2>
+      <p class="category-strip__subtitle">Precision parts for every component of your machine.</p>
+    </div>
+
+    <a class="category-strip__view-all" routerLink="/categories">
+      View All
+      <svg class="category-strip__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <div class="category-strip__grid">
+    <app-category-card
+      *ngFor="let category of categories"
+      [title]="category.title"
+      [path]="category.path"
+      [icon]="category.icon"
+      [background]="category.background"
+    ></app-category-card>
+  </div>
+</section>
+
