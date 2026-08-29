@@ -1,12 +1,11 @@
 <div class="main-page-banner">
   <div class="main-page-banner__text">
-    <span class="main-page-banner__badge">PREMIUM PERFORMANCE</span>
+    <span class="main-page-banner__badge">{{ banner?.badgeText }}</span>
 
-    <h1 class="main-page-banner__title">Engineered for Performance</h1>
+    <h1 class="main-page-banner__title">{{ banner?.title }}</h1>
 
     <p class="main-page-banner__description">
-      Experience the next generation of synthetic lubrication. Precision-blended
-      for extreme thermal stability and maximum fuel economy.
+      {{ banner?.description }}
     </p>
 
     <div class="main-page-banner__actions">
@@ -17,7 +16,7 @@
 
   <div class="main-page-banner__image">
     <div class="main-page-banner__image-frame">
-      <img src="/royal_purple_banner.png" alt="Product" />
+      <img [src]="banner?.imageUrl" [alt]="banner?.title" />
     </div>
   </div>
 </div>
