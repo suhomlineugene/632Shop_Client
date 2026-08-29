@@ -1,0 +1,22 @@
+<div class="main-page-banner">
+  <div class="main-page-banner__text">
+    <span class="main-page-banner__badge">{{ banner?.badgeText }}</span>
+
+    <h1 class="main-page-banner__title">{{ banner?.title }}</h1>
+
+    <p class="main-page-banner__description">
+      {{ banner?.description }}
+    </p>
+
+    <div class="main-page-banner__actions">
+      <button class="main-page-banner__btn main-page-banner__btn--primary">Shop All Products</button>
+      <button class="main-page-banner__btn main-page-banner__btn--outline">Find Your Oil</button>
+    </div>
+  </div>
+
+  <div class="main-page-banner__image">
+    <div class="main-page-banner__image-frame">
+      <img [src]="banner?.imageUrl" [alt]="banner?.title" />
+    </div>
+  </div>
+</div>

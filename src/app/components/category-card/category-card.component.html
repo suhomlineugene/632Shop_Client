@@ -1,0 +1,11 @@
+<a
+  class="category-card"
+  [routerLink]="path"
+  [style.background-image]="background"
+>
+  <div class="category-card__content">
+    <span class="category-card__icon" [innerHTML]="safeIcon"></span>
+    <h3 class="category-card__title">{{ title }}</h3>
+  </div>
+</a>
+

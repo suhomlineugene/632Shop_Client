@@ -1,0 +1,61 @@
+@import "../../../variables.scss";
+
+.category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 256px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid $dark-grey-blue;
+  background-color: $black-steel;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5, 6, 10, 0.05) 0%, rgba(5, 6, 10, 0.85) 80%);
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $electricity;
+  }
+}
+
+.category-card__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: $electricity;
+
+  ::ng-deep svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.category-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+

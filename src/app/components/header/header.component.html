@@ -1,47 +1,41 @@
 <header class="header">
-  <!-- Header Section: Menu Icon, Logo, Search, Sign In, Cart -->
+  <!-- Header Section: Logo, Category Menu, Search, Wishlist, Account, Cart -->
   <div class="header-top">
     <div class="left-section">
-      <button class="menu-btn" (click)="toggleMenu()">
-        <fa-icon [icon]="faBars"></fa-icon>
-      </button>
       <div class="logo-section">
-        <!--        <img [src]="logo_alt" alt="632 Shop Logo" class="logo"/>-->
         <img src="logo_transp.png" alt="632 Shop Logo" class="logo"/>
       </div>
     </div>
 
     <div class="center-section">
-      <div class="search-component">
-        <input
-          pInputText
-          type="text"
-          class="search-bar"
-          placeholder="Search products..."
-
-        />
-        <button
-          pButton
-          type="button"
-          class="search-btn"
-        >
-          <fa-icon [icon]="searchIcon"></fa-icon>
-        </button>
-      </div>
+      <app-category-menu></app-category-menu>
     </div>
 
     <div class="actions-section">
-      <button class="action-btn sign-in-btn">
-        <fa-icon [icon]="login"></fa-icon>
-        <span>Sign In</span>
+      <div class="search-component">
+        <fa-icon [icon]="searchIcon" class="search-icon"></fa-icon>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search products..."
+          [(ngModel)]="searchQuery"
+          (keyup.enter)="onSearch(searchQuery)"
+        />
+      </div>
+
+      <button class="icon-btn wishlist-btn" aria-label="Wishlist">
+        <img src="like_icon.svg" alt="Wishlist" class="wishlist-icon"/>
       </button>
+
+      <button class="icon-btn account-btn" aria-label="Account">
+        <img src="profile_icon.svg" alt="Account" class="account-icon"/>
+      </button>
+
       <button class="action-btn cart-btn">
-        <fa-icon [icon]="cart"></fa-icon>
+        <img src="cart.svg" alt="Cart" class="cart-icon"/>
         <span>Cart</span>
       </button>
     </div>
   </div>
 </header>
-
-<app-menu [isOpen]="isMenuOpen" (close)="closeMenu()"></app-menu>
 

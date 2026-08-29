@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [CommonModule, FormsModule, InputTextModule, ButtonModule],
   templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class SearchComponent {

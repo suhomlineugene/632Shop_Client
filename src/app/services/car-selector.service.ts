@@ -9,39 +9,13 @@ export interface SelectOption {
   value: string;
 }
 
-interface YearResponse {
-  result: string[];
-}
-
-interface BrandsResponse {
-  result: Brand[];
-}
-
-interface Brand {
+interface DropdownDto {
+  id: number;
   name: string;
-  slug: string;
-  isActive: boolean;
-  id: number;
 }
 
-interface ModelsResponse {
-  result: Model[];
-}
-
-interface Model {
-  name: string;
-  slug: string;
-  isActive: boolean;
-  id: number;
-}
-
-interface VehicleVariantsResponse {
-  result: VehicleVariant[];
-}
-
-interface VehicleVariant {
-  id: number;
-  engineCode: string;
+interface DropdownResponse {
+  result: DropdownDto[];
 }
 
 @Injectable({
@@ -54,36 +28,36 @@ export class CarSelectorService {
   }
 
   public getYears(): Observable<SelectOption[]> {
-    return this.http.get<YearResponse>(`${this.baseUrl}/CarSelector/GetYears`).pipe(
-      map(response => response.result.map(item => ({label: item, value: item})))
+    return this.http.get<DropdownResponse>(`${this.baseUrl}/VehicleSelector/GetYears`).pipe(
+      map(response => response.result.map(item => ({label: item.name, value: item.id.toString()})))
     );
   }
 
   public getBrands(year: string): Observable<SelectOption[]> {
-    return this.http.get<BrandsResponse>(`${this.baseUrl}/CarSelector/GetBrands`, {params: {year}}).pipe(
+    return this.http.get<DropdownResponse>(`${this.baseUrl}/VehicleSelector/GetBrands`, {params: {year}}).pipe(
       map(response => response.result.map(item => ({label: item.name, value: item.id.toString()})))
     );
   }
 
- public  getModels(brandId: string, year: string): Observable<SelectOption[]> {
-    return this.http.get<ModelsResponse>(`${this.baseUrl}/CarSelector/GetModelsByBrandId`, {
+  public getModels(year: string, brandId: string): Observable<SelectOption[]> {
+    return this.http.get<DropdownResponse>(`${this.baseUrl}/VehicleSelector/GetModels`, {
       params: {
-        brandId,
-        year
+        year,
+        brandId
       }
     }).pipe(
       map(response => response.result.map(item => ({label: item.name, value: item.id.toString()})))
     );
   }
 
-  public getVariants(modelId: string, year: string): Observable<SelectOption[]> {
-    return this.http.get<VehicleVariantsResponse>(`${this.baseUrl}/CarSelector/GetVariantsByModelId`, {
+  public getVariants(year: string, modelId: string): Observable<SelectOption[]> {
+    return this.http.get<DropdownResponse>(`${this.baseUrl}/VehicleSelector/GetVariants`, {
       params: {
-        modelId,
-        year
+        year,
+        modelId
       }
     }).pipe(
-      map(response => response.result.map(item => ({label: item.engineCode, value: item.id.toString()})))
+      map(response => response.result.map(item => ({label: item.name, value: item.id.toString()})))
     );
   }
 }

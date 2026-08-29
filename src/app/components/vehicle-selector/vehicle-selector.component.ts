@@ -2,19 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {SelectModule} from 'primeng/select';
-import {ButtonModule} from 'primeng/button';
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faCar} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {CarSelectorService, SelectOption} from '../../services/car-selector.service';
 
 @Component({
   selector: 'app-vehicle-selector',
-  imports: [CommonModule, FormsModule, SelectModule, ButtonModule, FontAwesomeModule],
+  imports: [CommonModule, FormsModule, SelectModule, FontAwesomeModule],
   templateUrl: './vehicle-selector.component.html',
   styleUrl: './vehicle-selector.component.scss'
 })
 export class VehicleSelectorComponent implements OnInit {
-  public searchIcon = faSearch;
+  public carIcon = faCar;
 
   constructor(private carSelectorService: CarSelectorService) {
   }
@@ -73,7 +72,7 @@ export class VehicleSelectorComponent implements OnInit {
   }
 
   public loadModels() {
-    this.carSelectorService.getModels(this.selectedMake!, this.selectedYear!).subscribe(models => {
+    this.carSelectorService.getModels(this.selectedYear!, this.selectedMake!).subscribe(models => {
       this.models = models;
     });
   }
@@ -91,7 +90,7 @@ export class VehicleSelectorComponent implements OnInit {
   }
 
   public loadEngines() {
-    this.carSelectorService.getVariants(this.selectedModel!, this.selectedYear!).subscribe(variants => {
+    this.carSelectorService.getVariants(this.selectedYear!, this.selectedModel!).subscribe(variants => {
       this.engines = variants;
     });
   }
