@@ -1,0 +1,37 @@
+<div class="engine-oil">
+  <nav class="engine-oil__breadcrumbs">
+    <span>Shop</span>
+    <span class="sep">›</span>
+    <span>Oils</span>
+    <span class="sep">›</span>
+    <span class="current">Engine Oil</span>
+  </nav>
+
+  <header class="engine-oil__header">
+    <h1>Engine Oils for your Porsche 911</h1>
+    <p>Recommended lubricants and high-performance fluids meeting C40 specifications.</p>
+  </header>
+
+  <app-product-layout>
+    <div filters class="engine-oil-filters">
+      <app-brand-filter (brandSelected)="onBrandSelected($event)"></app-brand-filter>
+
+      <app-viscosity-filter [productType]="productType" (viscositySelected)="onViscositySelected($event)"></app-viscosity-filter>
+
+      <div class="filter-group">
+        <div class="filter-group__title">OEM Approvals</div>
+        <label class="filter-option" *ngFor="let approval of oemApprovals">
+          <input type="checkbox" [(ngModel)]="approval.checked" />
+          <span>{{ approval.label }}</span>
+        </label>
+      </div>
+    </div>
+
+    <div products class="engine-oil-products">
+      <div class="engine-oil-products__loader" *ngIf="loading()">
+        <p-progressSpinner ariaLabel="Loading engine oils"></p-progressSpinner>
+      </div>
+      <app-product-list *ngIf="!loading()" [products]="products()"></app-product-list>
+    </div>
+  </app-product-layout>
+</div>

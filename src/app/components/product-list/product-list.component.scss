@@ -1,0 +1,14 @@
+.product-list {
+  display: grid;
+  // auto-fill (not auto-fit) keeps empty tracks when there are fewer cards
+  // than fit a row, so real cards stay a fixed size instead of stretching
+  // to fill the whole row on large / ultra-wide (2K, 4K) screens.
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}

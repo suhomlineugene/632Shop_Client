@@ -1,0 +1,7 @@
+<div class="filter-group">
+  <div class="filter-group__title">{{ title }}</div>
+  <label class="filter-option" *ngFor="let brand of brands">
+    <input type="checkbox" [(ngModel)]="brand.checked" (change)="onBrandChange(brand)" />
+    <span>{{ brand.label }}</span>
+  </label>
+</div>
