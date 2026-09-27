@@ -1,0 +1,24 @@
+<div class="product-card">
+  <div class="product-card__image">
+    <img [src]="product.coverImageUrl" [alt]="product.name" />
+  </div>
+
+  <div class="product-card__body">
+    <h3>{{ product.name }}</h3>
+
+    <div class="specs">
+      <span class="spec" *ngIf="product.viscosity">{{ product.viscosity }}</span>
+      <span class="spec" *ngIf="product.capacity">{{ product.capacity }}</span>
+      <span class="spec" *ngIf="product.countryOfOrigin">{{ product.countryOfOrigin }}</span>
+    </div>
+
+    <div class="price-row">
+      <span class="price">{{ product.price.toFixed(0) }} грн</span>
+      <span class="stock" [class.stock--out]="!product.isAvailable">
+        {{ product.isAvailable ? '● IN STOCK' : '● OUT OF STOCK' }}
+      </span>
+    </div>
+
+    <button type="button" class="add-to-cart" [disabled]="!product.isAvailable">Add to Cart</button>
+  </div>
+</div>

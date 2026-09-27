@@ -1,0 +1,14 @@
+<div class="filter-group">
+  <div class="filter-group__title">{{ title }}</div>
+  <div class="filter-chips">
+    <button
+      type="button"
+      class="chip"
+      *ngFor="let viscosity of viscosities"
+      [class.chip--active]="viscosity.checked"
+      (click)="toggle(viscosity)"
+    >
+      {{ viscosity.label }}
+    </button>
+  </div>
+</div>

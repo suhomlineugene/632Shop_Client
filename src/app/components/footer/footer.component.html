@@ -1,12 +1,51 @@
 <footer class="footer">
-  <div class="footer-content">
+  <div class="footer-top">
+    <div class="footer-column footer-brand">
+      <img src="logo_transp.png" alt="632 Shop Logo" class="footer-logo" />
+      <p class="footer-tagline">
+        High-performance lubricants engineered for technical mastery and maximum engine longevity.
+      </p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-icon" aria-label="Website">
+          <fa-icon [icon]="globeIcon"></fa-icon>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="Email">
+          <fa-icon [icon]="envelopeIcon"></fa-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="#oil-finder">Oil Finder</a>
+      <a href="#oem-approvals">OEM Approvals</a>
+      <a href="#technical-sheets">Technical Sheets</a>
+      <a href="#diy-center">DIY Center</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Support</h4>
+      <a href="#return-policy">Return Policy</a>
+      <a href="#contact-support">Contact Support</a>
+      <a href="#shipping-info">Shipping Info</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+
+    <div class="footer-column footer-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Get technical updates and performance tips.</p>
+      <div class="footer-newsletter__form">
+        <input type="email" placeholder="Email address" [(ngModel)]="email" name="email" />
+        <button type="button">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
     <p>&copy; {{ currentYear }} 632 Shop. All rights reserved.</p>
     <div class="footer-links">
       <a href="#privacy">Privacy Policy</a>
-      <span class="separator">|</span>
       <a href="#terms">Terms of Service</a>
-      <span class="separator">|</span>
-      <a href="#contact">Contact Us</a>
     </div>
   </div>
 </footer>

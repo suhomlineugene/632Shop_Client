@@ -1,0 +1,43 @@
+@import '../../../variables';
+
+.filter-group {
+  background-color: $deep-onyx;
+  border-radius: 0.75rem;
+  box-shadow: inset 0 0 0 1px $dark-grey-blue;
+  padding: 1rem;
+
+  &__title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  background-color: $black-steel;
+  color: $salty;
+  border: none;
+  box-shadow: inset 0 0 0 1px $dark-grey-blue;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $electricity;
+  }
+
+  &--active {
+    background-color: $electricity;
+    color: #1a2b4c;
+    font-weight: 700;
+  }
+}

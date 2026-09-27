@@ -1,0 +1,31 @@
+@import '../../../variables';
+
+.filter-group {
+  background-color: $deep-onyx;
+  border-radius: 0.75rem;
+  box-shadow: inset 0 0 0 1px $dark-grey-blue;
+  padding: 1rem;
+
+  &__title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  color: $salty;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  input {
+    accent-color: $electricity;
+    width: 16px;
+    height: 16px;
+  }
+}

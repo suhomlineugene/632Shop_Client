@@ -1,11 +1,11 @@
 <div class="main-page-banner">
   <div class="main-page-banner__text">
-    <span class="main-page-banner__badge">{{ banner?.badgeText }}</span>
+    <span class="main-page-banner__badge">{{ banner!.badgeText }}</span>
 
-    <h1 class="main-page-banner__title">{{ banner?.title }}</h1>
+    <h1 class="main-page-banner__title">{{ banner!.title }}</h1>
 
     <p class="main-page-banner__description">
-      {{ banner?.description }}
+      {{ banner!.description }}
     </p>
 
     <div class="main-page-banner__actions">
@@ -16,7 +16,7 @@
 
   <div class="main-page-banner__image">
     <div class="main-page-banner__image-frame">
-      <img [src]="banner?.imageUrl" [alt]="banner?.title" />
+      <img [src]="banner!.imageUrl" [alt]="banner!.title" />
     </div>
   </div>
 </div>

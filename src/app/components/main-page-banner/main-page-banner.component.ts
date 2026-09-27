@@ -12,6 +12,8 @@ export class MainPageBannerComponent implements OnInit {
   constructor(private mainBannerService: MainBannerService) { }
 
   public ngOnInit(): void {
-    this.mainBannerService.getMainBanner().subscribe(b => this.banner = b);
+    this.mainBannerService.getMainBanner().subscribe(b => {
+      console.log(b)
+      this.banner = b; });
   }
 }
